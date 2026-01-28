@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface CohortRepository extends CrudRepository<Cohort, Integer> {
-    @Query("SELECT * FROM hackathon_teams.genairosity.cohort WHERE is_active = true")
+    @Query("SELECT * FROM hackathon_teams.genairosity.cohort WHERE is_active = true AND status != 'Complete'")
     List<Cohort> findAllActive();
 }
