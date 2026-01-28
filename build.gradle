@@ -26,6 +26,12 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // Source: https://mvnrepository.com/artifact/com.databricks/databricks-jdbc
+    implementation 'com.databricks:databricks-jdbc:3.1.1'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -34,4 +40,10 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.named('bootRun') {
+    jvmArgs = [
+            '--add-opens', 'java.base/java.nio=ALL-UNNAMED'
+    ]
 }
