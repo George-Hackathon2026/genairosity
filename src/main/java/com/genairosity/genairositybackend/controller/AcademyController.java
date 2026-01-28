@@ -1,9 +1,7 @@
 package com.genairosity.genairositybackend.controller;
 
 import com.genairosity.genairositybackend.entity.Academy;
-import com.genairosity.genairositybackend.entity.City;
 import com.genairosity.genairositybackend.repository.AcademyRepository;
-import com.genairosity.genairositybackend.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
