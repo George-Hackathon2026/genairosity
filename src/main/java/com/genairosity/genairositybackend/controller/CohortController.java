@@ -1,6 +1,7 @@
 package com.genairosity.genairositybackend.controller;
 
 import com.genairosity.genairositybackend.entity.Cohort;
+import com.genairosity.genairositybackend.model.CohortDto;
 import com.genairosity.genairositybackend.repository.CohortRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +22,9 @@ public class CohortController {
     private CohortRepository cohortRepository;
 
     @GetMapping("/cohort")
-    public List<Cohort> getCohorts() {
-        List<Cohort> cohorts = new ArrayList<>();
-        Iterable<Cohort> iterable = cohortRepository.findAllActive();
+    public List<CohortDto> getCohorts() {
+        List<CohortDto> cohorts = new ArrayList<>();
+        Iterable<CohortDto> iterable = cohortRepository.findAllActive();
         iterable.forEach(cohorts::add);
         return cohorts;
     }
