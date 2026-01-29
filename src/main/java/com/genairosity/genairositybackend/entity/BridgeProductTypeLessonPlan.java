@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "hackathon_teams.genairosity.bridge_curriculum_lesson_plan")
-public class BridgeCurriculumLessonPlan {
+public class BridgeProductTypeLessonPlan {
     @Id
     @Column("bridge_id")
     private Long bridgeId;
@@ -25,8 +25,8 @@ public class BridgeCurriculumLessonPlan {
     /**
      * Reference to curriculum table.
      */
-    @Column("curriculum_id")
-    private Integer curriculumId;
+    @Column("product_type_id")
+    private Integer productTypeId;
 
     /**
      * Reference to lesson_plan table.
@@ -51,12 +51,6 @@ public class BridgeCurriculumLessonPlan {
      */
     @Column("session_time")
     private String sessionTime;
-
-    /**
-     * Order of this lesson within the day.
-     */
-    @Column("sequence_order")
-    private Integer sequenceOrder;
 
     /**
      * When this mapping was created.
